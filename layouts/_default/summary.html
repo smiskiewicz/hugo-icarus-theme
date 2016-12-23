@@ -1,7 +1,8 @@
 <article class="archive-article archive-type-post">
     <div class="archive-article-inner">
         <div class="archive-article-thumbnail">
-            {{ if isset .Params "banner" }}
+            {{ if isset .Site.Params "no_thumbs" }}
+            {{ else if isset .Params "banner" }}
             <a href="{{ .Permalink }}" class="thumbnail">
                 <span style="background-image:url({{ .Params.banner | absURL }})" alt="{{ .Title }}" class="thumbnail-image"></span>
             </a>

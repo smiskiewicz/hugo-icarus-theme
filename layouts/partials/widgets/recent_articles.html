@@ -7,6 +7,8 @@
         <ul id="recent-post">
             {{ range first 5 (where .Site.Pages "Type" "post") }}
             <li>
+            {{ if isset .Site.Params "no_thumbs" }}
+            {{ else }}
                 <div class="item-thumbnail">
                     <a href="{{ .Permalink }}" class="thumbnail">
                     {{ if and (isset .Params "banner") (not (eq .Params.banner "")) }}
@@ -16,6 +18,7 @@
                     {{ end }}
                     </a>
                 </div>
+            {{ end }}
                 <div class="item-inner">
                     {{ if isset .Params "categories" }}
                     {{ if gt (len .Params.categories) 0 }}

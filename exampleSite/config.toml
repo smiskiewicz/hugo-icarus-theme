@@ -25,6 +25,9 @@ theme = "hugo-icarus-theme"
     avatar = "css/images/avatar.png"
     logo = "css/images/logo.png"
 
+    # Uncomment out no_thumbs to remove all thumbnails
+    # no_thumbs = "true"
+
     # Format dates with Go's time formatting
     date_format = "2006-01-02"
 
